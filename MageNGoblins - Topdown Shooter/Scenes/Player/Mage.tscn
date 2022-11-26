@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Player/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Mage/Mage (Godot).png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Player/Projectile/Mage_Projectile.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 5, 5 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Hit"
@@ -72,15 +75,26 @@ position = Vector2( 0, 0 )
 texture = ExtResource( 2 )
 vframes = 5
 
+[node name="Collision" parent="." index="1"]
+position = Vector2( 0, 2 )
+shape = SubResource( 3 )
+
 [node name="Animation" parent="." index="2"]
 anims/Hit = SubResource( 2 )
 anims/fire = SubResource( 1 )
+
+[node name="HitBoxArea" parent="." index="3"]
+visible = true
+
+[node name="Collision" parent="HitBoxArea" index="0"]
+visible = false
+position = Vector2( 0, 2 )
 
 [node name="ProjectileSpawner" parent="." index="4"]
 position = Vector2( 0, 1 )
 
 [node name="Camera2D" parent="." index="5"]
-current = false
+position = Vector2( 0, 0 )
 
 [node name="HealthBar" parent="." index="6"]
 margin_left = -7.0

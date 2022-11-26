@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Resources/HealthBar.tres" type="Texture" id=1]
+
+[node name="HealthBar" type="TextureProgress"]
+margin_left = 65.0
+margin_top = 31.0
+margin_right = 113.0
+margin_bottom = 47.0
+rect_scale = Vector2( 0.25, 0.25 )
+value = 100.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 1 )
+tint_under = Color( 0.219608, 0.219608, 0.219608, 1 )
